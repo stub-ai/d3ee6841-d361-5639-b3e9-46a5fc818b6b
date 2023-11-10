@@ -70,7 +70,7 @@ const Calculator = () => {
           <button
             key={number}
             onClick={() => handleNumberClick(number.toString())}
-            className="bg-blue-500 text-white rounded p-2"
+            className="bg-blue-500 text-white rounded p-2 hover:bg-blue-700 transition duration-200"
           >
             {number}
           </button>
@@ -81,17 +81,17 @@ const Calculator = () => {
           <button
             key={operator}
             onClick={() => handleOperatorClick(operator)}
-            className="bg-red-500 text-white rounded p-2"
+            className="bg-red-500 text-white rounded p-2 w-full hover:bg-red-700 transition duration-200"
           >
             {operator}
           </button>
         ))}
       </div>
       <div className="flex justify-between mt-4">
-        <button onClick={clear} className="bg-yellow-500 text-white rounded p-2">
+        <button onClick={clear} className="bg-yellow-500 text-white rounded p-2 w-full hover:bg-yellow-700 transition duration-200">
           Clear
         </button>
-        <button onClick={calculate} className="bg-green-500 text-white rounded p-2">
+        <button onClick={calculate} className="bg-green-500 text-white rounded p-2 w-full hover:bg-green-700 transition duration-200">
           Calculate
         </button>
       </div>

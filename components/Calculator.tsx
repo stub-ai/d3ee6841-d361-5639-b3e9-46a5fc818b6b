@@ -75,6 +75,8 @@ const Calculator = () => {
             {number}
           </button>
         ))}
+      </div>
+      <div className="flex justify-between mt-4">
         {['+', '-', '*', '/'].map((operator) => (
           <button
             key={operator}

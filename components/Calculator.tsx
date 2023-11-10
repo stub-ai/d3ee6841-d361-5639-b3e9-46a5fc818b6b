@@ -5,6 +5,7 @@ const Calculator = () => {
   const [secondNumber, setSecondNumber] = useState('');
   const [operator, setOperator] = useState('');
   const [result, setResult] = useState('');
+  const [log, setLog] = useState<string[]>([]);
 
   const handleNumberClick = (number: string) => {
     if (!operator) {
@@ -38,6 +39,8 @@ const Calculator = () => {
       default:
         break;
     }
+
+    setLog([...log, `${firstNumber} ${operator} ${secondNumber} = ${result}`]);
   };
 
   const clear = () => {
@@ -76,7 +79,7 @@ const Calculator = () => {
           </button>
         ))}
       </div>
-      <div className="flex justify-between mt-4">
+      <div className="flex justify-between mt-4 space-x-4">
         {['+', '-', '*', '/'].map((operator) => (
           <button
             key={operator}
@@ -100,6 +103,14 @@ const Calculator = () => {
           <h2 className="text-xl font-bold">Result: {result}</h2>
         </div>
       )}
+      <div className="mt-4">
+        <h2 className="text-xl font-bold text-center">Calculation Log:</h2>
+        <ul>
+          {log.map((entry, index) => (
+            <li key={index}>{entry}</li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 };
